@@ -1,18 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>
+      Regular list:
+      <v-for :list="list" />
+    </p>
+
+    <p>
+      Bolded list:
+      <v-for :list="list">
+        <template v-slot="{ item }">
+          <strong>{{ item }}</strong>
+        </template>
+      </v-for>
+    </p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VFor from './components/VFor';
 
 export default {
   name: 'app',
+
   components: {
-    HelloWorld
-  }
+    VFor,
+  },
+
+  data() {
+    return {
+      list: ['one', 'two', 'three', 'four'],
+    };
+  },
 }
 </script>
 
