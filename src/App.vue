@@ -16,10 +16,10 @@
 
     <p>
       <v-if :condition="false">
-        True
+        First condition is true
         <template #false>
           <v-if :condition="true">
-            Nested If
+            Second condition is true
           </v-if>
         </template>
       </v-if>
