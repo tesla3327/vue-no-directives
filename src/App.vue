@@ -18,7 +18,9 @@
       <v-if :condition="false">
         True
         <template #false>
-          False
+          <v-if :condition="true">
+            Nested If
+          </v-if>
         </template>
       </v-if>
     </p>
