@@ -13,17 +13,28 @@
         </template>
       </v-for>
     </p>
+
+    <p>
+      <v-if :condition="false">
+        True
+        <template #false>
+          False
+        </template>
+      </v-if>
+    </p>
   </div>
 </template>
 
 <script>
 import VFor from './components/VFor';
+import VIf from './components/VIf';
 
 export default {
   name: 'app',
 
   components: {
     VFor,
+    VIf,
   },
 
   data() {
